@@ -8,11 +8,8 @@
 import {HostComponent, HostText} from 'shared/ReactWorkTags';
 import invariant from 'shared/invariant';
 
-const randomKey = Math.random()
-  .toString(36)
-  .slice(2);
-const internalInstanceKey = '__reactInternalInstance$' + randomKey;
-const internalEventHandlersKey = '__reactEventHandlers$' + randomKey;
+const internalInstanceKey = '__reactInternalInstance$';
+const internalEventHandlersKey = '__reactEventHandlers$';
 
 export function precacheFiberNode(hostInst, node) {
   node[internalInstanceKey] = hostInst;

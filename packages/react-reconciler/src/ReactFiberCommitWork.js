@@ -728,6 +728,8 @@ function commitUnmount(current: Fiber): void {
     }
     case HostComponent: {
       safelyDetachRef(current);
+      current.stateNode.__reactEventHandlers$ = null;
+      current.stateNode.__reactInternalInstance$ = null;
       return;
     }
     case HostPortal: {
